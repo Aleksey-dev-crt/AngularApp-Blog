@@ -1,0 +1,70 @@
+<form class="card" [formGroup]="form" (ngSubmit)="submit()">
+    <h2>Войти в панель администратора</h2>
+
+    <div class="alert alert-danger" *ngIf="auth.error$ | async as error">
+        {{error}}
+    </div>
+
+    <div class="alert alert-info" *ngIf="message">
+        {{message}}
+    </div>
+
+    <div
+        class="form-control"
+        [ngClass]="{invalid: form.get('email').touched && form.get('email').invalid}"
+    >
+        <label for="email">E-mail:</label>
+        <input id="email" type="email" formControlName="email">
+        <div
+            *ngIf="form.get('email').touched && form.get('email').invalid"
+            class="validation"
+        >
+            <small *ngIf="form.get('email').errors.required">
+               Поле не может быть пустым
+            </small>
+            <small *ngIf="form.get('email').errors.email">
+                Введите корректный e-mail
+            </small>
+        </div>
+    </div>
+
+    <div
+        class="form-control"
+        [ngClass]="{invalid: form.get('password').touched && form.get('password').invalid}"
+    >
+        <label for="password">Пароль:</label>
+        <input id="password" type="password" formControlName="password">
+        <div
+            *ngIf="form.get('password').touched && form.get('password').invalid"
+            class="validation"
+        >
+            <small *ngIf="form.get('password').errors.required">
+                Поле не может быть пустым
+            </small>
+
+            <small *ngIf="form.get('password').errors.minlength">
+                Пароль должен состоять не менее чем из
+                {{form.get('password').errors.minlength.requiredLength}} символов.
+<!--                Вы ввели {{form.get('password').errors.minlength.actualLength}} символа.-->
+            </small>
+        </div>
+    </div>
+
+    <button
+        [disabled]="form.invalid || submitted"
+        type="submit"
+        class="btn btn-primary"
+    >Войти</button>
+
+    <button
+        class="btn btn-dark"
+        type="button"
+        (click)="hint = !hint"
+    >Подсказка</button>
+
+</form>
+
+<div class="hint" *ngIf="hint">
+    <p>E-mail: admin@mail.ru</p>
+    <p>Пароль: 123456</p>
+</div>
