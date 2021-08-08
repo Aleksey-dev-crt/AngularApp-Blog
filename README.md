@@ -1,6 +1,6 @@
 **Ссылка на страницу**
 
-[Angular-Blog](https://aleksey-dev-crt.github.io/AngularApp-Blog/dist/angular-blog/index.html)
+[Angular-Blog](https://angular-blog-77391.web.app/)
 
 # AngularBlog
 
