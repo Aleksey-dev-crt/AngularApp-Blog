@@ -1,6 +1,6 @@
 **Ссылка на страницу**
 
-[Angular-Blog](https://angular-blog-77391.web.app/){:target="_blank"}
+[Angular-Blog](https://angular-blog-77391.web.app/)
 
 # AngularBlog
 
