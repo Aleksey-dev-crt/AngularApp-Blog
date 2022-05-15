@@ -12,8 +12,6 @@ _Данный проект представляет собой веб прило
 
 [Angular-Blog](https://angular-blog-77391.web.app/)
 
-*статус проекта: завершен*
-
 # AngularBlog
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.0.
